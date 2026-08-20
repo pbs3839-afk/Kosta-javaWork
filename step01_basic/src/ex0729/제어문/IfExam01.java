@@ -1,0 +1,31 @@
+package ex0729.제어문;
+
+public class IfExam01 {
+
+	public static void main(String[] args) {
+		// 1.정수형 변수를 선언하고 적당히 초기화한다.
+		// 2. 선언한 정수의 값이 짝수이면 "짝입니다." 아니면 "홀입니다."
+		double nansu = Math.random();
+		System.out.println("nansu = " + nansu);
+		System.out.println("후 nansu = " + nansu);
+		
+		int convertNansu = (int)nansu;
+		System.out.println("convertnansu = " + convertNansu);
+		
+		int no = (int)(Math.random()*56+45); // 45~ 100 사이의 난수 저장
+		
+		if(no%2==0) {
+			System.out.println(no + "는 짝수입니다.");
+		}else {
+				System.out.println(no + "는 홀수 입니다.");
+		}
+		
+		
+			if(no%7==0) {
+			  System.out.println(no + "는 짝수입니다.");
+			}else {
+				System.out.println(no + "는 홀수입니다.");
+			}
+	}
+	
+}
