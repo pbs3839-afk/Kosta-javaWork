@@ -15,10 +15,12 @@ public class ScannerExam {
 		int eng = sc.nextInt();
 		
 		System.out.print("이름 >");
-		sc.nextLine();
-		String name = sc.nextLine();
+		String name = sc.next();
 		
-		System.out.println("국어"+ kor + "영어" + eng);
+		sc.nextLine();
+		
+		
+		System.out.println(name+"님 점수는" + "국어"+ kor + "영어" + eng);
 	}
 
 }
