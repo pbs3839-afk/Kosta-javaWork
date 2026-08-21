@@ -1,0 +1,56 @@
+package profile.view;
+
+import java.util.Scanner;
+
+import profile.dto.Profile;
+import profile.service.ProfileServiceImpl;
+
+public class ProfileMenuView {
+	private Scanner sc = new Scanner(System.in);
+	private ProfileServiceImpl service = new ProfileServiceImpl();
+
+	public void printMenu() {
+		while (true) {
+			System.out.println("1. 프로필 저장 2.프로필 불러오기 3.종료");
+			int menuChoice = sc.nextInt();
+			
+			switch (menuChoice) {
+			case 1:
+				System.out.print("이름>");
+				String name = sc.next();
+
+				System.out.print("몸무게>");
+				int weight = sc.nextInt();
+
+				System.out.print("비밀번호>");
+				int password = sc.nextInt();
+
+				Profile p = new Profile(name,weight,password);
+				
+				int result = service.insert(p);
+				
+				if(result==-1)
+					System.out.println("이미 존재하므로 다시 입력하세요");
+				else if(result==1)
+					System.out.println("프로필 저장완료");
+				
+				break;
+			case 2:
+				System.out.print("이름>");
+				String selectName = sc.next();
+				
+				Profile selectp = service.select(selectName);
+				
+				if(selectp==null){
+					System.out.println("해당하는 정보가 없습니다.");
+				  }else{
+					  System.out.println(selectp);
+				  }
+				break;
+			case 3:
+				System.exit(0); 
+				break;
+			}
+		}
+	}
+}
