@@ -1,5 +1,10 @@
 package mvc.service;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,6 +23,7 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 
 	private static ElectronicsService instance = new ElectronicsServiceImpl();
 	private static final int MAX_SIZE = 10;
+	private static final String FILE_PATH = "electronics.obj";
 	List<Electronics> list = new ArrayList<Electronics>();
 
 	/**
@@ -25,15 +31,20 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 	 * 
 	 */
 	private ElectronicsServiceImpl() {
-		if(객체를 저장한 파일이 존재한다면) {
-			
+		File file = new File(FILE_PATH);
+		if(file.exists()) {
+			try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))){
+				list = (List<Electronics>) ois.readObject();
+				System.out.println("******");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}else {
 			System.out.println("**private constructor init.....");
 			ResourceBundle rb = ResourceBundle.getBundle("InitInfo");// InitInfo.properties
 			for (String key : rb.keySet()) {
 				String value = rb.getString(key); // 100,\uC120\uD48D\uAE30,35000,\uC0BC\uC131 \uC120\uD48D\uAE30
 				String data[] = value.split(",");
-				//System.out.println(key + " = " + value);
 				Electronics elec =
 				new Electronics(Integer.parseInt(data[0]), data[1], Integer.parseInt(data[2]), data[3]);
 				list.add(elec);
@@ -100,7 +111,8 @@ public class ElectronicsServiceImpl implements ElectronicsService {
 
 	@Override
 	public void saveobject() throws Exception{
-		// TODO Auto-generated method stub
-	}
-
-} // 클래스 끝
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
+	        oos.writeObject(list);
+		}
+	} 
+}

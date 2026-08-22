@@ -42,9 +42,9 @@ public class MenuView{
 				   case "6" : 
 					   controller.selectSortByPrice();
 					   break;
-				   case "9" : 
-					   //종료하기전에 최종 list를 파일에 저장하자 -> Service가서 하자
-	                 System.exit(0);
+				   case "9" :
+					    controller.saveObject();
+					    System.exit(0);
 				   default:
 					   System.out.println("메뉴를 다시 선택해주세요!!!!");
 

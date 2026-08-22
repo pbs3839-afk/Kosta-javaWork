@@ -3,7 +3,7 @@ package mvc.dto;
  * 전자제품의 속성을 관리하는 객체 
  */
 
-public class Electronics implements Comparable<Electronics> {
+public class Electronics implements Comparable<Electronics>, java.io.Serializable { 
 	private int modelNo;
 	private String modelName;
 	private int modelPrice;
