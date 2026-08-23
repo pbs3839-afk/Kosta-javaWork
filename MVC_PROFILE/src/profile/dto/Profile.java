@@ -1,12 +1,6 @@
 package profile.dto;
 
-import java.io.Serializable;
-
-public class Profile implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Profile {
 	private String name;
 	private int weight;
 	private int password;
