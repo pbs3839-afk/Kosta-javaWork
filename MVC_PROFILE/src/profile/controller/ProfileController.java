@@ -5,7 +5,7 @@ import profile.service.ProfileService;
 import profile.service.ProfileServiceImpl;
 
 public class ProfileController {
-	private ProfileService service = new ProfileServiceImpl();
+	private ProfileService service = (ProfileService) new ProfileServiceImpl();
 
 	public int insert(String name, int weight, int password) {
 		return service.insert(new Profile(name, weight, password));
