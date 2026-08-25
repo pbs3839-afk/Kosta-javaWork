@@ -1,0 +1,15 @@
+package profile;
+
+public class ProfileService {
+
+	public int insert(Profile p) {
+		
+		return 0;
+	}
+
+	public Profile select(String selectName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

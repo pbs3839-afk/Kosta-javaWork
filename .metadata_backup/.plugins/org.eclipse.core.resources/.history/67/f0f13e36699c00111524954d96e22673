@@ -1,0 +1,46 @@
+package ex0820;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileInputOutputExam {
+	public FileInputOutputExam() {
+		FileInputStream fis = null;
+		try {
+
+			fis = new FileInputStream("src/ex0820/a.txt");
+			/*
+			 * while(true) { int i = fis.read(); if(i==-1)break; System.out.println(i +
+			 * " = " + (char)i); } System.out.println("**완료**");
+			 */
+
+			/////////////////////////////////////////////////////////////////////
+			int len = fis.available();
+			System.out.println("len =" + len);
+
+			// byte [] 크기 만큼 한번에 읽기
+			byte[] b = new byte[len];
+			fis.read(b);
+			// byte[]을 String 변환 방법
+			String str = new String(b);
+			System.out.println(str);
+
+		} catch (IOException e) {
+
+		} finally {
+			try {
+				if (fis != null)
+					fis.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public static void main(String[] args) {
+		new FileInputOutputExam();
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package ex0820;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileInputOutputExam {
+	public FileInputOutputExam() {
+		FileInputStream fis = null;
+		try {
+			
+		fis = new FileInputStream("src/ex0820/a.txt");
+			int i = fis.read();
+			System.out.println(i + " = " + (char)i);
+		} catch (IOException e) {
+			
+		}finally {
+			try {
+				if(fis!=null) fis.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	public static void main(String[] args) {
+		new FileInputOutputExam();
+
+	}
+	
+}

@@ -1,0 +1,10 @@
+package ex0825.chat;
+
+public class ClientChatExam {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

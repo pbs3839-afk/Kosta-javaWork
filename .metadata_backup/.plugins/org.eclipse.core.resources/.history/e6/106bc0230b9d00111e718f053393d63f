@@ -1,0 +1,10 @@
+package ex0821;
+
+public class SerializationSaveExam {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

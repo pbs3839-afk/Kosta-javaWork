@@ -1,0 +1,48 @@
+package ex0824;
+
+public class ThreadExam {
+
+	public static void main(String[] args) {
+		System.out.println("***메인 시작합니다.***");
+
+		System.out.println("***메인 끝입니다.***");
+	}
+}
+
+/////////////////////////////////////////////////////
+/**
+ * 1~100까지 출력하는 스레드 - 상속
+ */
+class NumberThread extends Thread {
+	public NumberThread(String name) {
+		super(name);
+	}
+
+	/**
+	 * Thread로 작업할 기능 작성 - run()메소드 재정의
+	 */
+	@Override
+	public void run() {
+		for (int i = 0; i < 100; i++) {
+			System.out.println(super.getName() + "End");
+		}
+	}
+}
+//////////////////////////////////////////////////////////////
+/**
+ * A~Z 출력하는 스레드 - 구현
+ */
+class AlphaThread implements Runnable{
+	
+	@Override
+	public void run() {
+		Thread th = Thread.currentThread();
+		for(char ch='A'; ch <='Z'; ch++) {
+			System.out.println(th.getName()+"==>"+ch);
+			
+		}
+		System.out.println(th.getName()+"End---");
+		
+	}
+	
+}

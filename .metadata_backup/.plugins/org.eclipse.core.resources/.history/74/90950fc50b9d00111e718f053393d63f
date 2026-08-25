@@ -1,0 +1,13 @@
+package ex0821;
+
+public class SerializationSaveExam {
+	public SerializationSaveExam() {
+		//객체를 저장하자
+	}
+		
+	public static void main(String[] args) {
+		new SerializationSaveExam();
+
+	}
+
+}

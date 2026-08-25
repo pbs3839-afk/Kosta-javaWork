@@ -1,0 +1,14 @@
+package ex0824;
+
+import javax.swing.JFrame;
+
+public class GUIThreadExam extends JFrame {
+	public GUIThreadExam() {
+
+	}
+
+	public static void main(String[] args) {
+		new GUIThreadExam();
+	}
+
+}

@@ -1,0 +1,10 @@
+package ex0826.multiChat;
+
+public class ServerGUIChatExam {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
