@@ -16,7 +16,9 @@ public class Test04 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
+        Map<String, Long> map =  students.stream()
+				.collect(Collectors.groupingBy(Student::getMajor,Collectors.counting()));
+					System.out.println(map);
         
        
 

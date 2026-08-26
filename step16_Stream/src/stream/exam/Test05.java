@@ -16,7 +16,10 @@ public class Test05 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
+        	String st =	students.stream()
+        			.map(Student::getName)
+        			.collect(Collectors.joining(","));
+				System.out.println(st);
         
        
 

@@ -1,7 +1,6 @@
 package stream.exam;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -16,13 +15,11 @@ public class Test06 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
+         List<String> list = students.stream()
+        		.filter(s->s.getAge()>=23)
+        		.map(Student::getName)
+        		.collect(Collectors.toList());
         
-       
-
-
-
-
-
+        System.out.println(list);
     }
 }

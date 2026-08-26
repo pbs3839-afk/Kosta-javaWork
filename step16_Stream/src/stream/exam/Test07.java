@@ -17,12 +17,11 @@ public class Test07 {
                  new Student("현솔", 25, 81.7, "Physics")
         );
 
+        List<String> list = students.stream()
+        .map(s->s.getMajor() + ": " + s.getScore())
+        .collect(Collectors.toList());
         
-        
-
-
-
-
+        System.out.println(list);
 
     }
 }

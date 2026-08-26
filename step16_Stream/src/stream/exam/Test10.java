@@ -1,8 +1,6 @@
 package stream.exam;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * 전공이 'Computer Science'인 학생이 한 명이라도 있는지 확인(anyMatch)
@@ -16,10 +14,10 @@ public class Test10 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
         
-        
-
+    	boolean re = students.stream()
+		.anyMatch((t)->t.getMajor().equals("Computer Science"));
+		System.out.println(re);
 
 
     }

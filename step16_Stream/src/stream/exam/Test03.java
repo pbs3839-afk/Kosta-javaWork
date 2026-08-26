@@ -15,10 +15,13 @@ public class Test03 {
                  new Student("찬범", 23, 92.3, "Computer Science"),
                  new Student("현솔", 25, 81.7, "Physics")
         );
-
         
+        List<Student> list =  students.stream()
+        .filter(s->s.getScore()>=80)
+        .collect(Collectors.toList());
+        
+        System.out.println(list);
       
-
 
     }
 }

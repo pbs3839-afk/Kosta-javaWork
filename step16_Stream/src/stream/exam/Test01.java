@@ -1,6 +1,8 @@
 package stream.exam;
-import java.util.*;
-import java.util.stream.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 평균 점수 구하기 (filter + mapToDouble + average)
@@ -14,9 +16,18 @@ public class Test01 {
             new Student("찬범", 23, 92.3, "Computer Science"),
             new Student("현솔", 25, 81.7, "Physics")
         );
+         //System.out.println("Computer Science 전공 평균 점수: " + ?);
+        double avg = students.stream()
+                .filter(s -> s.getMajor().equals("Computer Science"))
+                .mapToDouble(Student::getScore)
+                .average()
+                .getAsDouble();
 
-       
+        System.out.println("Computer Science 전공 평균 점수: " + avg);
+        
 
-       // System.out.println("Computer Science 전공 평균 점수: " + ?);
+				
+        
+        
     }
 }
