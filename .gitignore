@@ -1,6 +1,17 @@
-.metadata/
-*/bin/
-*/.classpath
-*/.project
-.settings/
+# 빌드 산출물
+bin/
+target/
+*.class
 
+# Javadoc
+doc/
+docs/
+
+# 이클립스 설정 (선택)
+.metadata/
+.settings/
+.classpath
+.project
+
+# 기타
+*.log
