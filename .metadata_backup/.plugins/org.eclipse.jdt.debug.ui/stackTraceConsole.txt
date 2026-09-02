@@ -1,3 +1,0 @@
-System.out.print(name + "===> 현재 잔액 : " + balance + "/");
-			balance--;
-			System.out.println(name + "===> 출금 후 현재 잔액 : " + balance);

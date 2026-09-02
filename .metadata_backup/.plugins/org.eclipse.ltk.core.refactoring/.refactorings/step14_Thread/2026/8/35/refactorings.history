@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;ex0824.GUIThread&apos; to &apos;GUIThreadExam&apos;&#x0D;&#x0A;- Original project: &apos;step14_Thread&apos;&#x0D;&#x0A;- Original element: &apos;ex0824.GUIThread&apos;&#x0D;&#x0A;- Renamed element: &apos;ex0824.GUIThreadExam&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GUIThread&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ex0824{GUIThread.java[GUIThread" matchStrategy="1" name="GUIThreadExam" qualified="false" references="true" similarDeclarations="false" stamp="1787540075000" textual="false" version="1.0"/>
-</session>
