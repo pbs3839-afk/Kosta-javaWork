@@ -1,0 +1,85 @@
+package ex0731;
+
+import java.util.Scanner;
+
+class Grade{
+	//1) 국어, 영어, 수학 점수를 인수받아 총점을 구하여
+	//총점을 리턴하는 메소드 작성
+	//(접근제한자 private)
+	private int sum(int kor, int eng, int math) {
+		int sum = kor + eng + math; 
+		return sum;
+	}
+	//2) 총점과 과목수(int) 를 인수로받아 평균을 구하여
+	//평균을 리턴하는 메소드 작성 
+	//(접근제한자 private)
+	private double avg(int sum , int size) {
+		double avg = (double)sum/size;
+		return avg;
+	}
+	//3) 평균을 인수로 받아 등급을 구하여 등급을 리턴해주는
+	//메소드 작성한다(접근제한자 private)
+	private char grade(double avg){
+		char grade = 'F';
+		
+		switch((int)avg/10){
+			case 10, 9: grade = 'A'; break;
+		    case 8: grade = 'B' ; break;
+		    case 7: grade = 'C' ; break;
+		    case 6: grade = 'D' ;break;
+		    default : grade = 'F';
+		}
+		return grade;
+	}
+	//4) 이름, 국어, 영어, 수학 점수를 인수로 받아
+	//총점 , 평균 ,등급 을 구하여 그 결과를 화면에 출력하는
+	//메소드를 선언하세요.
+	//(접근제한자 public,
+	//총점과 평균 , 등급은 이미 만들어진 1) , 2) ,3) 메소드를 호출
+	//하여 그 결과를 통해 얻어온다)
+	public void wwe(String name, int kor, int eng, int math) {
+		int total = this.sum(kor, eng, math);
+		double avg =this.avg(total,3);
+		char grade =this.grade(avg);
+		System.out.println(name + "님");
+		System.out.println("국어점수: " + kor);
+		System.out.println("수학점수" + math);
+		System.out.println("영어점수" + eng );
+		System.out.println("총점" + total );
+		System.out.println("평균" + avg );
+		System.out.println("학점" + grade );
+	}
+}
+
+public class Main {  
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("1.성적표       2.종료");
+			System.out.println("메뉴선택 > ");
+			int menuChoice = sc.nextInt();
+	
+			if(menuChoice==1) {
+				System.out.println("이름은?");
+				String name = sc.next();
+	
+				System.out.println("국어점수 입력?");
+				int kor = sc.nextInt();
+	
+				System.out.println("영어점수 입력?");
+				int eng = sc.nextInt();
+				
+				System.out.println("수학점수 입력?");
+				int math = sc.nextInt();
+				
+				Grade g = new Grade();
+				g.wwe(name, kor, eng, math);
+			} else if(menuChoice==2)	{
+				break; // while 탈출
+			} else {
+				System.out.println("메뉴는 1~2만 입력하세요");
+			}
+		}
+	}
+}

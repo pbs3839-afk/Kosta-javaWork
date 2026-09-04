@@ -1,0 +1,17 @@
+package ex0825.chat;
+
+import java.net.Socket;
+
+/**
+ * 키보드 입력을 받아서 상대측(client or server)에게 데이터를 전송하는 스레드
+ */
+public class SendThread extends Thread {
+	public SendThread(Socket sk, String name) {
+
+	}
+
+	@Override
+	public void run() {
+
+	}
+}

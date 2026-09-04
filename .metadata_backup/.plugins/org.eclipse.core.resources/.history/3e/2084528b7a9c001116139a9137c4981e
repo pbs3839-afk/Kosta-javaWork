@@ -1,0 +1,48 @@
+package profile;
+
+import java.util.Scanner;
+
+public class ProfileMain {
+	private Scanner sc = new Scanner(System.in);
+	private ProfileService service = new ProfileService();
+
+	public void printMenu() {
+		while (true) {
+			System.out.print("1. 프로필 저장 2.프로필 불러오기 3.종료");
+			int menuChoice = sc.nextInt();
+			switch (menuChoice) {
+			case 1:
+				System.out.print("이름>");
+				String name = sc.next();
+
+				System.out.print("몸무게>");
+				int weight = sc.nextInt();
+
+				System.out.print("비밀번호>");
+				int password = sc.nextInt();
+
+				Profile p = new Profile(name,weight,password);
+				
+				int result = service.insert(p);
+				
+				if(result==-1)
+					System.out.print("이미 존재하므로 다시 입력하세요");
+				else if(result==1)
+					System.out.print("프로필 저장완료");
+				
+				break;
+				case 2:
+				System.out.println("이름>");
+					if() {
+						System.out.println("님 몸무게는 : " + weight + "이고 비번은 :" + password + "입니다." );
+					}
+					
+				case 3:
+				System.out.println("프로그램을 종료합니다.");
+				System.exit(0); 
+				break;
+
+			}
+		}
+	}
+}

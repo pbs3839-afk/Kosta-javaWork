@@ -1,0 +1,24 @@
+package ex0825.net;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerExam {
+	public ServerExam() {
+		try (ServerSocket server = new ServerSocket(8000)) {
+			System.out.println("클라이언트 접속을 대기중입니다.");
+			Socket sk = server.accept();// 클라이언트 접속 대기 - 접속되면 수락되어 Socket 반환
+			// 접속된 클라이언트 IP조회
+			sk.getInetAddress().toString();
+			System.out.println(ip + "님 접속되었습니다.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main(String[] args) {
+		new ServerExam();
+
+	}
+
+}
