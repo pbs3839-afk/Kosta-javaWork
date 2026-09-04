@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;ex0826.multiChat&apos; to &apos;ex0825.multiChat&apos;&#x0D;&#x0A;- Original project: &apos;step15_network&apos;&#x0D;&#x0A;- Original element: &apos;step15_network/src/ex0826.multiChat&apos;&#x0D;&#x0A;- Renamed element: &apos;step15_network/src/ex0825.multiChat&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;ex0826.multiChat&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;ex0826.multiChat" name="ex0825.multiChat" qualified="false" references="true" stamp="1787640621779" textual="false" version="1.0"/>
+</session>

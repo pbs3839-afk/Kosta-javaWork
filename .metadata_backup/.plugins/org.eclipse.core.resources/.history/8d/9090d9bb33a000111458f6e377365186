@@ -1,0 +1,16 @@
+package ex0825.chat;
+
+/**
+ * 서버와 1 : 1 채팅을 위한 클라이언트
+ */
+public class ClientChatExam {
+	public ClientChatExam() {
+
+	}
+
+	public static void main(String[] args) {
+		new ClientChatExam();
+
+	}
+
+}
