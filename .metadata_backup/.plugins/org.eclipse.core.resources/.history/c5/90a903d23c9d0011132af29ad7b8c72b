@@ -1,9 +1,0 @@
-package profile;
-
-public class StartView {
-	public static void main(String[] args) {
-		ProfileMain pm = new ProfileMain();
-
-		pm.printMenu();
-	}
-}

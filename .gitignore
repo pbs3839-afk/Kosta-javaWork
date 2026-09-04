@@ -14,4 +14,4 @@ docs/
 .project
 
 # 기타
-*.log
+*.log.metadata_backup/
